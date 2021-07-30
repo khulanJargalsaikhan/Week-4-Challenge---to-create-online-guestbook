@@ -25,8 +25,12 @@
         <li th:text="${post.wishes}" class="list-group-item"></li>
         <li th:text="${post.date}" class="list-group-item"></li>
         <li class="list-group-item">ID#: [[${post.id}]]</li>
+        <!--update - delete button-->
+        <div class="container-sm" style="margin: 10px 0 10px;">
+            <button type="button" class="btn btn-success"><a style="color: white" th:href="@{/update/{id}(id=${post.id})}">Update</a></button>
+            <button type="button" class="btn btn-danger"><a style="color: white" th:href="@{/delete/{id}(id=${post.id})}">Delete</a></button>
+        </div>
     </ul>
-
 </div>
 <div     th:unless="${allposts.size()} > 0" class="container-sm">
 

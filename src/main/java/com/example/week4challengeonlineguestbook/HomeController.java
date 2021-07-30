@@ -41,13 +41,6 @@ public class HomeController {
         }
     }
 
-
-    @RequestMapping("/allposts")
-    public String showAllposts(Model model){
-        model.addAttribute("allposts", allposts );
-        return "allposts";
-    }
-
     @RequestMapping("/post/{id}")
     public String loadDetail(@PathVariable("id") long id, Model model){
         for (Post post: allposts){
@@ -56,6 +49,13 @@ public class HomeController {
             }
         }
         return "post";
+    }
+
+
+    @RequestMapping("/allposts")
+    public String showAllposts(Model model){
+        model.addAttribute("allposts", allposts );
+        return "allposts";
     }
 
     @RequestMapping("/update/{id}")
